@@ -28,7 +28,11 @@
 <div class="container" style="margin-top: 5%;">
     <div class="row valign-wrapper">
         <div class="card col s12 z-depth-5" style="margin: 0px;">
-            <center><label><h4>SEM6 الكورسـات</h4></label></center>         
+         <ul class="collapsible z-depth-0">
+            <li>
+              <div class="collapsible-header">
+                <label><h4>SEM6 الكورسـات</h4></label>  
+              </div>     
               <ul class="collapsible z-depth-0">
                 <li>
                   <div class="collapsible-header">
@@ -36,7 +40,7 @@
                     <div class="col offset-s1" style="margin-top: 20px;">
                         <b>Ai</b>
                     </div>
-                </div>
+                  </div>
                   <div class="collapsible-body">
                     {% if not ai %}
                       <img src="{% static 'img/sleep.gif' %}" width="230" height="150" style="border-radius: 20px;"/>

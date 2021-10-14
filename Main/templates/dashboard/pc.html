@@ -462,14 +462,18 @@
           <!--   Divider    -->
           <ul class="collapsible z-depth-0">
             <li>
-              <label><h4>SEM7 الكورسـات</h4></label>
+              <div class="collapsible-header">
+                <label><h4>SEM6 الكورسـات</h4></label>
+              </div>
               <div class="collapsible-body">
               <ul class="collapsible z-depth-0">
                 <li>
-                  <img src="{% static 'img/courses/Ai.png' %}" style="width: 64px; height: 64px;">
-                  <div class="col offset-s1" style="margin-top: 20px;">
-                      <b>Ai</b>
-                  </div>
+                  <div class="collapsible-header">
+                    <img src="{% static 'img/courses/Ai.png' %}" style="width: 64px; height: 64px;">
+                    <div class="col offset-s1" style="margin-top: 20px;">
+                        <b>Ai</b>
+                    </div>
+                </div>
                   <div class="collapsible-body" style="margin: 0px; padding: 0px;">
                     {% if not ai %}
                       <img src="{% static 'img/sleep.gif' %}" width="230" height="150" style="border-radius: 20px;"/>

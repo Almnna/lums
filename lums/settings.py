@@ -25,7 +25,7 @@ SECRET_KEY = '&0k6$=c(x8yjbtg%alshv85p3*mdh$4ac+y2yhm%d1bc^po8!t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lums.pythonanywhere.com']
+ALLOWED_HOSTS = ['lums.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition

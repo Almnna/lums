@@ -18,9 +18,17 @@ def dashboard(request):
 	softeng = Lectures.objects.filter(course="softeng").order_by('lecture_no')
 	db_apps = Lectures.objects.filter(course="db_apps").order_by('lecture_no')
 	mod_sim = Lectures.objects.filter(course="mod_sim").order_by('lecture_no')
+ 
+	cc = Lectures.objects.filter(course="cc").order_by('lecture_no')
+	cnm = Lectures.objects.filter(course="cnm").order_by('lecture_no')
+	ec = Lectures.objects.filter(course="ec").order_by('lecture_no')
+	mad = Lectures.objects.filter(course="mad").order_by('lecture_no')
+	osc = Lectures.objects.filter(course="osc").order_by('lecture_no')
+	rm = Lectures.objects.filter(course="rm").order_by('lecture_no')
 
 	return render(request, "dashboard.html", {"user_agent": request.user_agent, "ai": ai, "web": web,
-	"oop": oop, "multimedia": multimedia, "softeng": softeng, "db_apps": db_apps, "mod_sim": mod_sim})
+	"oop": oop, "multimedia": multimedia, "softeng": softeng, "db_apps": db_apps, "mod_sim": mod_sim,
+ 	"cc": cc, "cnm": cnm, "ec": ec, "mad": mad, "osc": osc, "rm": rm})
 
 def index(request):
     if request.method == "POST":

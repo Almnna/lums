@@ -827,68 +827,7 @@
                     {% endfor %}
                   </div>
                 </li>
-                  <li>
-                  <div class="collapsible-header">
-                        <img src="{% static 'img/courses/simModeling.png' %}" style="width: 64px; height: 64px;">
-                    <div class="col offset-s1" style="margin-top: 20px;">
-                        <b>Modeling & Simulation</b>
-                    </div>
-                  </div>
-                  <div class="collapsible-body" style="margin: 0px; padding: 0px;">
-                    {% if not mod_sim %}
-                      <img src="{% static 'img/sleep.gif' %}" width="230" height="150" style="border-radius: 20px;"/>
-                    {% endif %}
-                    {% for lecture in mod_sim %}
-                        <ul class="collapsible  z-depth-5">
-                          <li>
-                              <div class="collapsible-header">
-                                <h5 class="col offset-s3">
-                                  {% if lecture.lecture_no == 0 %}
-                                    <div class="col offset-s1">Asset</div>
-                                  {% else %}
-                                     Lecture {{lecture.lecture_no}}
-                                  {% endif %}
-                                </h5>
-                              </div>
-                              <div class="collapsible-body">
-                                  <center><h5 style="color: grey;margin-bottom: 20px;">{{lecture.lecture_na}}</h5></center>
-                              <br/>
-                              
-                              {% if lecture.pdf != '0' %}
-                                {% if lecture.pdf %}
-                                  <label>PDF</label>
-                                  <a href="{{lecture.pdf}}" class="btn btn-small btn-cus" target="_blank">
-                                      <i class="material-icons mf" style="color: pink;">download</i>
-                                  </a>
-                                  <br/><br/>
-                                {% endif %}
-                              {% endif %}
-                              {% if lecture.ppt != '0' %}
-                                <label>PPT</label>
-                                <a href="{{lecture.ppt}}" class="btn btn-small btn-cus" target="_blank">
-                                    <i class="material-icons mf" style="color: red;">download</i>
-                                </a><br/><br/>
-                              {% endif %}
-                              {% if lecture.word != '0' %}
-                                <label>WORD</label>
-                                <a style="margin-left: 5px;" href="{{lecture.word}}" class="btn btn-small btn-cus" target="_blank">
-                                    <i class="material-icons mf" style="color: blue;">download</i>
-                                </a><br/><br/>
-                              {% endif %}
-                              {% if lecture.video != '0' %}
-                              <label>VIDEO</label>
-                                <a href="{{lecture.video}}" class="btn btn-small btn-cus-v" target="_blank">
-                                    <i class="material-icons mf">download</i>
-                                </a><br/>
-                              {% endif %}
-                          </div>
-                          </li>
-                      </ul>
-                    {% endfor %}
-                  </div>
-                </li>
               </ul>
-              {% comment %} </div> {% endcomment %}
             </li>
           </ul>
         </div>

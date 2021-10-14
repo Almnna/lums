@@ -361,47 +361,6 @@
                     </ul>
                 </div>
             </li>
-            <li>
-                <div class="collapsible-header">
-                <img src="{% static 'img/courses/simModeling.png' %}" style="width: 64px; height: 64px;">
-                <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Modeling & Simulation</b>
-                </div>
-                </div>
-                <div class="collapsible-body">
-                    <ul class="collapsible  z-depth-5">
-                    {% for course in courses %}
-                        {% if course.course == 'mod_sim' %}
-                            <li>
-                                <div class="collapsible-header">
-                                    <h5 class="col offset-s3">
-                                    {% if course.lecture_no == 0 %}
-                                      <div class="col offset-s1">Asset</div>
-                                    {% else %}
-                                       Lecture {{course.lecture_no}}
-                                    {% endif %}
-                                    </h5>
-                                </div>
-                                <div class="collapsible-body">
-                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
-                                        <h5 class="col s12">Lecture name: </h5>
-                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
-                                        <p class="row centered">
-                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
-                                                <i class="material-icons" style="font-family: materialize-icons">
-                                                    edit
-                                                </i>
-                                            </a>
-                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
-                                                <i class="material-icons" style="font-family: materialize-icons">
-                                                    delete
-                                                </i>
-                                            </a>
-                                        </p>
-                                </div>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
                     </ul>
                 </div>
             </li>

@@ -1,0 +1,49 @@
+{% load static %}
+<title>المنصة البديلة lums</title>
+  <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/card.css' %}">
+  <link rel="icon" href="{% static 'img/b17.ico' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <nav class="nav-wrapper black">
+    <div class="container">
+      <ul>
+        <a href="/" class="brand-logo center"><img src="{% static 'img/b17.png' %}" alt="logo" style="width: 64px; height: 64px; margin-top: -2.5px;"></a>
+      <!-- <ul id="nav" class="left hide-on-med-and-down">
+        <li><a href="index.php"><b>Home</b></a></li>
+      </ul> -->
+       {% if user.is_authenticated %}
+          <text class="right" style="margin-right : 0px;">
+            <a href="{% url 'logout' %}"><i class="material-icons" style="font-family: materialize-icons">logout</i></a>
+          </text>
+          <text style="margin-left : 0px;">
+           <a href="{% url 'panel' %}"><b>{{user.username}}</b></a>
+          </text>
+          <br>
+        {% else %}
+          {% if request.path != "/login" %}
+             <text class="right" style="margin-right : 0px; margin-top: 10px;">
+              <form method="get">
+                {% csrf_token %}
+                  <a class="btn btn-small blue  z-depth-2" type="submit" href="{% url 'login' %}">Admin?</a>
+              </form>
+             </text>
+          {% endif %}
+        {% endif %}
+    </div>
+    </ul>
+  </nav>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js">
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = Materialize.Collapsible.init(elems, options);
+  });
+
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

@@ -1,0 +1,20 @@
+{% load static %}
+
+<div class="row valign-wrapper">
+    <div class="col s12 offset-s2 push-s1 card z-depth-1" style="padding: 4%; border-radius: 20px; max-width: 550px;">
+            <center>
+                <h4 class="col s12" style="color: #0d4a6b; letter-spacing: .5px; transition: .2s ease-out;">المِنَصَّة  الـبديــلـة</h4>
+            </center>
+             <form method="post">
+                {% csrf_token %}
+                <div class="col s6" style="margin-top: 20px;">
+                    <img class="col offset-s1" src="{% static 'img/meme.png' %}" style="width: 400px;height: 300px; border-radius: 10%;" />
+                </div>
+                <div class="col s6" style="margin-top: 190px;">
+                     <b>
+                        <input class="btn btn-large blue z-depth-5" name="view" style="border-radius: 10px;width: 190px;height: 100px; outline-color:  #EFEF00;font-size: 18px;" type="submit" value="بـدون تـسـجـيـل"  />
+                    </b>
+                </div>
+            </form>
+    </div>
+</div>

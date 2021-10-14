@@ -1,0 +1,414 @@
+{% load static %}
+
+ <div class="container">
+    <div class="row valign-wrapper">
+        <div class="card offset-s col s12 z-depth-5" style="margin-top: 10px;">
+            <form method="POST">
+                {% csrf_token %}
+                    <div class="container" >
+                        <div style="margin-top: 20px;">
+                            <h6>Add a New Lecture<h6/>
+                            <input class="col s12" style="font-family: GothDotGothic;" type="text" value="Choose Course >>" disabled/>
+                            <p class="col s6">
+                                <input name="category" type="radio" id="ai" value="ai"/>
+                                <label for="ai" style="font-family: GothDotGothic;">Ai</label>
+                            </p>
+                            <p class="col s6">
+                                <input class="with-gap" name="category" type="radio" id="web" value="web" checked/>
+                                <label for="web" style="font-family: GothDotGothic;">WebTech</label>
+                            </p>
+                            <p class="col s6">
+                                <input name="category" type="radio" id="oop" value="oop" />
+                                <label for="oop" style="font-family: GothDotGothic;">Advanced OOP</label>
+                            </p>
+                            <p class="col s6">
+                                <input name="category" type="radio" id="softeng" value="softeng" />
+                                <label for="softeng" style="font-family: GothDotGothic;">SoftwareEng</label>
+                            </p>
+                            <p class="col s6">
+                                <input name="category" type="radio" id="multimedia" value="multimedia" />
+                                <label for="multimedia" style="font-family: GothDotGothic;">Multimedia</label>
+                            </p>
+                            <p class="col s6">
+                                <input name="category" type="radio" id="db_apps" value="db_apps"/>
+                                <label for="db_apps" style="font-family: GothDotGothic;">DB Apps Dev</label>
+                            </p>
+                            <p class="col s12">
+                                <input name="category" type="radio" id="mod_sim" value="mod_sim"/>
+                                <label for="mod_sim" style="font-family: GothDotGothic;">Modeling & Simulation</label>
+                            </p>
+                        </div>
+
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="lec_no" placeholder="Lecture Number (Must be number)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="lec_na" placeholder="Lecture Name (Must)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="pdf" placeholder="pdf link (let it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="ppt" placeholder="ppt link (let it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="word" placeholder="word link (let it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="video" placeholder="video link (let it empty if there is not)" />
+                    <button class="col offset-s4 s11 btn-large materialize-red" type="submit"
+                    style="margin: 10px; margin-left: 12px;"><img src="{% static 'img/plus.png' %}"/></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container">-->
+<!--    <div class="row valign-wrapper">-->
+<!--        <div class="card col s12 z-depth-4">            -->
+<!--                <table class=" highlight">-->
+<!--                    <center><label><h4>Lectures</h4></label></center>-->
+                    <!-- <div class="row"> -->
+                    <!-- </div> -->
+<!--                    <thead>-->
+<!--                        <th></th>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        {% for course in courses %}-->
+<!--                            {% if course %}-->
+<!--                                <tr class="row" style='background-color: #dff0d8; boarder-color: #d0e9c6;'>-->
+<!--                                    <td class="col s3"><p>Course: </p></td> -->
+<!--                                    <td class="col s3"><p>{{course.course}}</p></td> -->
+<!--                                    <td class="col s3 push-s1"><p>Lecture:</p></td> -->
+<!--                                    <td class="col s2 push-s1"><p>{{course.lecture_no}}</p></td> -->
+<!--                                </tr>-->
+<!--                                <tr style='background-color: #dff0d8; boarder-color: #d0e9c6;'>-->
+<!--                                    <td class="col s4"><p>Lecture: </p></td> -->
+<!--                                    <td class="col s8 pull-s1"><p style="text-align: center;">{{course.lecture_na}}</p></td> -->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td class="row centered">-->
+<!--                                        <a class="btn orange col s5" href="{% url 'update' course.id %}">-->
+<!--                                            <i class="material-icons" style="font-family: materialize-icons">-->
+<!--                                                edit-->
+<!--                                            </i> -->
+<!--                                        </a>-->
+<!--                                        <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">-->
+<!--                                            <i class="material-icons" style="font-family: materialize-icons">-->
+<!--                                                delete-->
+<!--                                            </i>-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                            {% endif %}-->
+<!--                        {% endfor %}-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--<div>-->
+
+<div class="row valign-wrapper">
+    <div class="card col s12 z-depth-5">
+        <center><label><h4>Edit Courses</h4></label></center>
+          <ul class="collapsible z-depth-0">
+            <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/Ai.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Ai</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'ai' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/webTech2.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Web Technologies & Services</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'web' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/OPP.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Advanced OOP</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'oop' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+             <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/multimedia.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Multimedia</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'multimedia' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/sofeng.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Software Engineering 2</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'softeng' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+                <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/databaseAppDev.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>DB Apps Development</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'db_apps' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                <img src="{% static 'img/courses/simModeling.png' %}" style="width: 64px; height: 64px;">
+                <div class="col offset-s1" style="margin-top: 20px;">
+                    <b>Modeling & Simulation</b>
+                </div>
+                </div>
+                <div class="collapsible-body">
+                    <ul class="collapsible  z-depth-5">
+                    {% for course in courses %}
+                        {% if course.course == 'mod_sim' %}
+                            <li>
+                                <div class="collapsible-header">
+                                    <h5 class="col offset-s3">
+                                    {% if course.lecture_no == 0 %}
+                                      <div class="col offset-s1">Asset</div>
+                                    {% else %}
+                                       Lecture {{course.lecture_no}}
+                                    {% endif %}
+                                    </h5>
+                                </div>
+                                <div class="collapsible-body">
+                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
+                                        <h5 class="col s12">Lecture name: </h5>
+                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
+                                        <p class="row centered">
+                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    edit
+                                                </i>
+                                            </a>
+                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
+                                                <i class="material-icons" style="font-family: materialize-icons">
+                                                    delete
+                                                </i>
+                                            </a>
+                                        </p>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="card offset-s3 col s9 z-depth-3" style="margin-top: 1%">
+    <div class="row valign-wrapper">
+        <form method="POST" class="offset-s col s12">
+            {% csrf_token %}
+            <div style="margin-top: 20px;">
+                <input class="col s12" style="font-family: GothDotGothic;" type="text" value="Edit {{lecture.course}} Lecture >>" disabled/>
+                <p class="col s6">
+                    <input name="category" type="radio" id="ai" value="ai" {% if lecture.course == "ai" %} checked {% endif %}/>
+                    <label for="ai" style="font-family: GothDotGothic;">Ai</label>
+                </p>
+                <p class="col s6">
+                    <input class="with-gap" name="category" type="radio" id="web" value="web" {% if lecture.course == "web" %} checked {% endif %} />
+                    <label for="web" style="font-family: GothDotGothic;">WebTech</label>
+                </p>
+                <p class="col s6">
+                    <input name="category" type="radio" id="oop" value="oop" {% if lecture.course == "oop" %} checked {% endif %}/>
+                    <label for="oop" style="font-family: GothDotGothic;">Advanced OOP</label>
+                </p>
+                <p class="col s6">
+                    <input name="category" type="radio" id="softeng" value="softeng" {% if lecture.course == "softeng" %} checked {% endif %}/>
+                    <label for="softeng" style="font-family: GothDotGothic;">SoftwareEng</label>
+                </p>
+                <p class="col s6">
+                    <input name="category" type="radio" id="multimedia" value="multimedia" {% if lecture.course == "multimedia" %} checked {% endif %}/>
+                    <label for="multimedia" style="font-family: GothDotGothic;">Multimedia</label>
+                </p>
+                <p class="col s6">
+                    <input name="category" type="radio" id="db_apps" value="db_apps" {% if lecture.course == "db_apps" %} checked {% endif %}/>
+                    <label for="db_apps" style="font-family: GothDotGothic;">DB Apps Dev</label>
+                </p>
+                <p class="col s12">
+                    <input name="category" type="radio" id="mod_sim" value="mod_sim" {% if lecture.course == "mod_sim" %} checked {% endif %}/>
+                    <label for="mod_sim" style="font-family: GothDotGothic;">Modeling & Simulation</label>
+                </p>
+
+
+
+
+
+
+            <label for="lec_no" style="font-family: GothDotGothic;">Lecture no</label>
+            <input class="col offset-s2 s10" id="lec_no" style="padding: 5px; margin: 20px;" type="text" name="lec_no" value="{{lecture.lecture_no}}" />
+
+            <div>
+                <label for="lec_na" style="font-family: GothDotGothic;">Lecture name</label>
+                <input class="col offset-s2 s10" id="lec_na" style="padding: 5px; margin: 20px;" type="text" name="lec_na" value="{{lecture.lecture_na}}" />
+            </div>
+
+            <div>
+                <label for="pdf_link" style="font-family: GothDotGothic;">pdf link</label>
+                <input class="col offset-s2 s10" id="pdf_link" style="padding: 5px; margin: 20px;" type="text" name="pdf" value="{{lecture.pdf}}" />
+            </div>
+
+
+            <div>
+                <label for="ppt" style="font-family: GothDotGothic;">ppt link</label>
+                <input class="col offset-s2 s10" id="ppt" style="padding: 5px; margin: 20px;" type="text" name="ppt" value="{{lecture.ppt}}" />
+            </div>
+
+
+            <div>
+                <label for="word" style="font-family: GothDotGothic;">word link</label>
+                <input class="col offset-s2 s10" id="word" style="padding: 5px; margin: 20px;" type="text" name="word" value="{{lecture.word}}" />
+            </div>
+
+
+            <div>
+                <label for="video" style="font-family: GothDotGothic;">video link</label>
+                <input class="col offset-s2 s10" id="video" style="padding: 5px; margin: 20px;" type="text" name="video" value="{{lecture.video}}" />
+            </div>
+
+            <button class="col offset-s s12 btn" type="submit" style="margin-bottom: 10px; background-color: #ffc107;"
+                name="update">Update</button>
+        </form>
+    </div>
+</div>

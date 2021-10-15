@@ -1,12 +1,12 @@
 {% load static %}
 
- <div class="container">
-    <div class="row valign-wrapper">
-        <div class="card offset-s col s12 z-depth-5" style="margin-top: 10px;">
+ <!-- <div class="container"> -->
+    <div class="row ">
+        <div class="card offset-s col s6 z-depth-5" style="margin-top: 10px;">
             <form method="POST">
                 {% csrf_token %}
                     <div class="container" >
-                        <div style="margin-top: 20px; padding: 5px; margin-bottom: 20px;">
+                        <div style="margin-top: 20px;">
                             <h6>Add a New Lecture<h6/>
                             <input class="col s12" style="font-family: GothDotGothic;" type="text" value="Choose Course >>" disabled/>
                             <p class="col s6">
@@ -46,12 +46,12 @@
             </form>
         </div>
     </div>
-</div>
+<!-- </div> -->
 
-<!--<div class="container">-->
+<!-- <div class="container"> -->
 <!--    <div class="row">-->
-<!--        <div class="card col s12 z-depth-4" style="margin: 0px;">-->
-<!--                <table class=" highlight">-->
+<!--        <div class="card col s6 offset-s3 z-depth-4" style="margin-top: 10px;">-->
+<!--                <table class="highlight">-->
 <!--                    <center><label><h4>Lectures</h4></label></center>-->
                     <!-- <div class="row"> -->
                     <!-- </div> -->
@@ -91,21 +91,17 @@
 <!--                </table>-->
 <!--        </div>-->
 <!--    </div>-->
-<!--<div>-->
-
-
-
-
+<!-- <div> -->
 
 <div class="row valign-wrapper">
-    <div class="card col s12 z-depth-5">
+    <div class="card col s9 offset-s4 z-depth-5" style="margin-top: 10px;">
         <center><label><h4>Edit Courses</h4></label></center>
           <ul class="collapsible z-depth-0">
             <li>
                 <div class="collapsible-header">
                 <img src="{% static 'img/courses/sem7/cloud-computing.png' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>CLoud Computing</b>
+                    <b>Cloud Computing</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
@@ -281,7 +277,7 @@
                 <div class="collapsible-header">
                 <img src="{% static 'img/courses/sem7/OperatingSystemsConcepts.png' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Operating Systems Concepts</b>
+                    <b>Operating System Concepts</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
@@ -321,7 +317,7 @@
                     </ul>
                 </div>
             </li>
-            <li>
+                <li>
                 <div class="collapsible-header">
                 <img src="{% static 'img/courses/sem7/scientific-method.png' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
@@ -362,6 +358,9 @@
                             </li>
                         {% endif %}
                     {% endfor %}
+                    </ul>
+                </div>
+            </li>
                     </ul>
                 </div>
             </li>

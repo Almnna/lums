@@ -6,30 +6,30 @@
             <form method="POST">
                 {% csrf_token %}
                     <div class="container" >
-                        <div style="margin-top: 20px; padding: 5px; margin-bottom: 10px;">
+                        <div style="margin-top: 20px; padding: 5px; margin-bottom: 20px;">
                             <h6>Add a New Lecture<h6/>
                             <input class="col s12" style="font-family: GothDotGothic;" type="text" value="Choose Course >>" disabled/>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input name="category" type="radio" id="cc" value="cc"/>
                                 <label for="cc" style="font-family: GothDotGothic;">Cloud Computing</label>
                             </p>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input class="with-gap" name="category" type="radio" id="cnm" value="cnm" checked/>
                                 <label for="cnm" style="font-family: GothDotGothic;">Computer Networks Management</label>
                             </p>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input name="category" type="radio" id="ec" value="ec" />
                                 <label for="ec" style="font-family: GothDotGothic;">E-Commerce</label>
                             </p>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input name="category" type="radio" id="mad" value="mad" />
                                 <label for="mad" style="font-family: GothDotGothic;">Mobile Applications Development</label>
                             </p>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input name="category" type="radio" id="osc" value="osc" />
                                 <label for="osc" style="font-family: GothDotGothic;">Operating System Concepts</label>
                             </p>
-                            <p class="col s6" style="margin-bottom: 5px;">
+                            <p class="col s6" style="margin: 10px;">
                                 <input name="category" type="radio" id="rm" value="rm"/>
                                 <label for="rm" style="font-family: GothDotGothic;">Research Methodology</label>
                             </p>
@@ -37,10 +37,10 @@
 
                     <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="lec_no" placeholder="Lecture Number (Must be number)" />
                     <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="lec_na" placeholder="Lecture Name (Must)" />
-                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="pdf" placeholder="pdf link (let it empty if there is not)" />
-                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="ppt" placeholder="ppt link (let it empty if there is not)" />
-                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="word" placeholder="word link (let it empty if there is not)" />
-                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="video" placeholder="video link (let it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="pdf" placeholder="pdf link (leave it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="ppt" placeholder="ppt link (leave it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="word" placeholder="word link (leave it empty if there is not)" />
+                    <input class="col offset-s2 s10" style="padding: 5px; margin: 20px;" type="text" name="video" placeholder="video link (leave it empty if there is not)" />
                     <button class="col offset-s4 s11 btn-large materialize-red" type="submit"
                     style="margin: 10px; margin-left: 12px;"><img src="{% static 'img/plus.png' %}"/></button>
             </form>

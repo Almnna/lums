@@ -6,36 +6,32 @@
             <form method="POST">
                 {% csrf_token %}
                     <div class="container" >
-                        <div style="margin-top: 20px;">
+                        <div style="margin-top: 20px; padding: 5px; margin-bottom: 20px;">
                             <h6>Add a New Lecture<h6/>
                             <input class="col s12" style="font-family: GothDotGothic;" type="text" value="Choose Course >>" disabled/>
                             <p class="col s6">
-                                <input name="category" type="radio" id="ai" value="ai"/>
-                                <label for="ai" style="font-family: GothDotGothic;">Ai</label>
+                                <input name="category" type="radio" id="cc" value="cc"/>
+                                <label for="cc" style="font-family: GothDotGothic;">Cloud Computing</label>
                             </p>
                             <p class="col s6">
-                                <input class="with-gap" name="category" type="radio" id="web" value="web" checked/>
-                                <label for="web" style="font-family: GothDotGothic;">WebTech</label>
+                                <input class="with-gap" name="category" type="radio" id="cnm" value="cnm" checked/>
+                                <label for="cnm" style="font-family: GothDotGothic;">Computer Networks</label>
                             </p>
                             <p class="col s6">
-                                <input name="category" type="radio" id="oop" value="oop" />
-                                <label for="oop" style="font-family: GothDotGothic;">Advanced OOP</label>
+                                <input name="category" type="radio" id="ec" value="ec" />
+                                <label for="ec" style="font-family: GothDotGothic;">E-Commerce</label>
                             </p>
                             <p class="col s6">
-                                <input name="category" type="radio" id="softeng" value="softeng" />
-                                <label for="softeng" style="font-family: GothDotGothic;">SoftwareEng</label>
+                                <input name="category" type="radio" id="mad" value="mad" />
+                                <label for="mad" style="font-family: GothDotGothic;">Mobile Applications</label>
                             </p>
                             <p class="col s6">
-                                <input name="category" type="radio" id="multimedia" value="multimedia" />
-                                <label for="multimedia" style="font-family: GothDotGothic;">Multimedia</label>
+                                <input name="category" type="radio" id="osc" value="osc" />
+                                <label for="osc" style="font-family: GothDotGothic;">Operating System</label>
                             </p>
                             <p class="col s6">
-                                <input name="category" type="radio" id="db_apps" value="db_apps"/>
-                                <label for="db_apps" style="font-family: GothDotGothic;">DB Apps Dev</label>
-                            </p>
-                            <p class="col s12">
-                                <input name="category" type="radio" id="mod_sim" value="mod_sim"/>
-                                <label for="mod_sim" style="font-family: GothDotGothic;">Modeling & Simulation</label>
+                                <input name="category" type="radio" id="rm" value="rm"/>
+                                <label for="rm" style="font-family: GothDotGothic;">Research Methodology</label>
                             </p>
                         </div>
 
@@ -53,8 +49,8 @@
 </div>
 
 <!--<div class="container">-->
-<!--    <div class="row valign-wrapper">-->
-<!--        <div class="card col s12 z-depth-4">            -->
+<!--    <div class="row">-->
+<!--        <div class="card col s12 z-depth-4" style="margin: 0px;">-->
 <!--                <table class=" highlight">-->
 <!--                    <center><label><h4>Lectures</h4></label></center>-->
                     <!-- <div class="row"> -->
@@ -66,21 +62,21 @@
 <!--                        {% for course in courses %}-->
 <!--                            {% if course %}-->
 <!--                                <tr class="row" style='background-color: #dff0d8; boarder-color: #d0e9c6;'>-->
-<!--                                    <td class="col s3"><p>Course: </p></td> -->
-<!--                                    <td class="col s3"><p>{{course.course}}</p></td> -->
-<!--                                    <td class="col s3 push-s1"><p>Lecture:</p></td> -->
-<!--                                    <td class="col s2 push-s1"><p>{{course.lecture_no}}</p></td> -->
+<!--                                    <td class="col s3"><p>Course: </p></td>-->
+<!--                                    <td class="col s3"><p>{{course.course}}</p></td>-->
+<!--                                    <td class="col s3 push-s1"><p>Lecture:</p></td>-->
+<!--                                    <td class="col s2 push-s1"><p>{{course.lecture_no}}</p></td>-->
 <!--                                </tr>-->
 <!--                                <tr style='background-color: #dff0d8; boarder-color: #d0e9c6;'>-->
-<!--                                    <td class="col s4"><p>Lecture: </p></td> -->
-<!--                                    <td class="col s8 pull-s1"><p style="text-align: center;">{{course.lecture_na}}</p></td> -->
+<!--                                    <td class="col s4"><p>Lecture: </p></td>-->
+<!--                                    <td class="col s8 pull-s1"><p style="text-align: center;">{{course.lecture_na}}</p></td>-->
 <!--                                </tr>-->
 <!--                                <tr>-->
 <!--                                    <td class="row centered">-->
 <!--                                        <a class="btn orange col s5" href="{% url 'update' course.id %}">-->
 <!--                                            <i class="material-icons" style="font-family: materialize-icons">-->
 <!--                                                edit-->
-<!--                                            </i> -->
+<!--                                            </i>-->
 <!--                                        </a>-->
 <!--                                        <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">-->
 <!--                                            <i class="material-icons" style="font-family: materialize-icons">-->
@@ -97,21 +93,25 @@
 <!--    </div>-->
 <!--<div>-->
 
+
+
+
+
 <div class="row valign-wrapper">
     <div class="card col s12 z-depth-5">
         <center><label><h4>Edit Courses</h4></label></center>
           <ul class="collapsible z-depth-0">
             <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/Ai.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/cloud-computing.png' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Ai</b>
+                    <b>CLoud Computing</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'ai' %}
+                        {% if course.course == 'cc' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
@@ -147,15 +147,15 @@
             </li>
             <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/webTech2.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/computer-servers.jpeg' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Web Technologies & Services</b>
+                    <b>Computer Networks Management</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'web' %}
+                        {% if course.course == 'cnm' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
@@ -191,15 +191,15 @@
             </li>
             <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/OPP.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/E-Commerce.jpeg' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Advanced OOP</b>
+                    <b>E-Commerce</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'oop' %}
+                        {% if course.course == 'ec' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
@@ -235,15 +235,15 @@
             </li>
              <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/multimedia.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/android.png' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Multimedia</b>
+                    <b>Mobile Applications Development</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'multimedia' %}
+                        {% if course.course == 'mad' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
@@ -279,59 +279,15 @@
             </li>
             <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/sofeng.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/OperatingSystemsConcepts.jpeg' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Software Engineering 2</b>
+                    <b>Operating Systems Concepts</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'softeng' %}
-                            <li>
-                                <div class="collapsible-header">
-                                    <h5 class="col offset-s3">
-                                    {% if course.lecture_no == 0 %}
-                                      <div class="col offset-s1">Asset</div>
-                                    {% else %}
-                                       Lecture {{course.lecture_no}}
-                                    {% endif %}
-                                    </h5>
-                                </div>
-                                <div class="collapsible-body">
-                                        <h5 class="col s12">Lecture: {{course.lecture_no}}</h5>
-                                        <h5 class="col s12">Lecture name: </h5>
-                                        <h5 class="col s12" style="text-align: center;">{{course.lecture_na}}</h5>
-                                        <p class="row centered">
-                                            <a class="btn orange col s5" href="{% url 'update' course.id %}">
-                                                <i class="material-icons" style="font-family: materialize-icons">
-                                                    edit
-                                                </i>
-                                            </a>
-                                            <a class="btn red col s5 push-s2" href="{% url 'delete_lecture' course.id %}">
-                                                <i class="material-icons" style="font-family: materialize-icons">
-                                                    delete
-                                                </i>
-                                            </a>
-                                        </p>
-                                </div>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                </div>
-            </li>
-                <li>
-                <div class="collapsible-header">
-                <img src="{% static 'img/courses/databaseAppDev.png' %}" style="width: 64px; height: 64px;">
-                <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>DB Apps Development</b>
-                </div>
-                </div>
-                <div class="collapsible-body">
-                    <ul class="collapsible  z-depth-5">
-                    {% for course in courses %}
-                        {% if course.course == 'db_apps' %}
+                        {% if course.course == 'osc' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
@@ -367,15 +323,15 @@
             </li>
             <li>
                 <div class="collapsible-header">
-                <img src="{% static 'img/courses/simModeling.png' %}" style="width: 64px; height: 64px;">
+                <img src="{% static 'img/courses/sem7/scientific-method.jpeg' %}" style="width: 64px; height: 64px;">
                 <div class="col offset-s1" style="margin-top: 20px;">
-                    <b>Modeling & Simulation</b>
+                    <b>Research Methodology</b>
                 </div>
                 </div>
                 <div class="collapsible-body">
                     <ul class="collapsible  z-depth-5">
                     {% for course in courses %}
-                        {% if course.course == 'mod_sim' %}
+                        {% if course.course == 'rm' %}
                             <li>
                                 <div class="collapsible-header">
                                     <h5 class="col offset-s3">
